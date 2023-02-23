@@ -1,15 +1,13 @@
 const passport = require('passport');
-const YnabStrategy = require('passport-ynab').Strategy;
+const OAuth2Strategy = require('passport-oauth2').Strategy;
 
-passport.use(new YnabStrategy({ 
-    clientID: process.env.YNAB_CLIENT_ID,
-    clientSecret: process.env.YNAB_CLIENT_SECRET,
-    callbackURL: process.env.YNAB_CALLBACK_URL,
-    scope: 'read-only'
-    }, (accessToken, refreshToken, profile, done) => {
-        console.log('accessToken', accessToken);
-        console.log('refreshToken', refreshToken);
-        console.log('profile', profile);
-        done(null, profile);
-    }));
-    
+passport.use(new OAuth2Strategy({
+  authorizationURL: 'https://app.youneedabudget.com/oauth/authorize',
+  tokenURL: 'https://app.youneedabudget.com/oauth/token',
+  clientID: process.env.YNAB_CLIENT_ID,
+  clientSecret: process.env.YNAB_CLIENT_SECRET,
+  callbackURL: 'http://localhost:3000/auth/callback',
+  scope: 'read-only', 
+}, (accessToken, refreshToken, profile, done) => {
+
+}));
