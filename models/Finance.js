@@ -17,6 +17,7 @@ Finance.init(
     },
     expenses: {
       type: DataTypes.INTEGER,
+      allowNull: true,
     },
     goal_time: {
       type: DataTypes.INTEGER,
