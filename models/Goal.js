@@ -11,7 +11,7 @@ Goal.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    goal_time: {
+    goal_amount: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
