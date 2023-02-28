@@ -11,7 +11,7 @@ Income.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    income: {
+    amount: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
