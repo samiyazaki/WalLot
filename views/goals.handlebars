@@ -1,5 +1,5 @@
 <br>
-       <h4 class="text-center">Please select the goal that you would like to work towards!</h4>
+<h4 class="text-center">Please select the goal that you would like to work towards!</h4>
 <div class="row bg-primary col-10 mx-auto my-5 p-5 card-list-container" role="option-card" aria-label="Example 1px high">
   <!-- Car Goal -->
   <div class="text-center col-sm-6 mb-3 col-lg-4 mb-sm-0 my-4 option-card">
@@ -10,6 +10,7 @@
           <h5 class="card-title">Buy a Car</h5>
              <label for="car-amount">Enter amount</label>
         <input class="form-input" type="text" id="car-amount" name="car-amount" />
+
           <br>
           <button type="submit" class="btn btn-primary car-btn" id="car-goal">Select Goal</button>
           </form>
@@ -23,6 +24,11 @@
           <li>Consider buying a used car instead of new</li>
           <li>Shop around for the best car loan rates</li>
         </ul>
+        <form onsubmit="calculateCar(event)">
+          <label for="carAmountInput">Enter the amount you need to save:</label>
+          <input type="number" id="carAmountInput" name="amountInput" required>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
         <a href="#" class="btn btn-primary back-btn">Back</a>
       </div>
     </div>
@@ -34,6 +40,7 @@
         <div class="card-body">
              <form id="house-form">
           <h5 class="card-title">Save for a House</h5>
+
               <label for="house-amount">Enter amount</label>
         <input class="form-input" type="text" id="house-amount" name="house-amount" />
           <br>
@@ -49,6 +56,11 @@
           <li>Explore down payment assistance programs</li>
           <li>Consider a side job or freelance work to boost your income</li>
         </ul>
+        <form onsubmit="calculateHouse(event)">
+          <label for="houseAmountInput">Enter the amount you need to save:</label>
+          <input type="number" id="houseAmountInput" name="amountInput" required>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
         <a href="#" class="btn btn-primary back-btn">Back</a>
       </div>
     </div>
@@ -62,23 +74,30 @@
           <h5 class="card-title">Pay Off Debt</h5>
              <label for="debt-amount">Enter amount</label>
         <input class="form-input" type="text" id="debt-amount" name="debt-amount" />
+
           <br>
           <button type="submit" class="btn btn-primary debt-btn" id="debt-goal">Select Goal</button>
           </form>
         </div>
-        </div>
-    <div class="card-footer debt">
-    <p class="card">Getting out of debt is an important financial goal. Here are some tips to help you become debt-free:</p>
-    <ul class="debt">
-        <li>Create a budget and track your spending</li>
-        <li>Focus on paying off high-interest debt first</li>
-        <li>Consider a balance transfer credit card to consolidate debt</li>
-        <li>Explore debt counseling or debt consolidation programs</li>
-    </ul>
+      </div>
+      <div class="card-footer debt">
+        <p class="card">Getting out of debt is an important financial goal. Here are some tips to help you become debt-free:</p>
+        <ul class="debt">
+          <li>Create a budget and track your spending</li>
+          <li>Focus on paying off high-interest debt first</li>
+          <li>Consider a balance transfer credit card to consolidate debt</li>
+          <li>Explore debt counseling or debt consolidation programs</li>
+        </ul>
+        <form onsubmit="calculateDebt(event)">
+          <label for="debtAmountInput">Enter the amount you need to pay off:</label>
+          <input type="number" id="debtAmountInput" name="amountInput" required>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
         <a href="#" class="btn btn-primary back-btn">Back</a>
-            </div>
-        </div>
+      </div>
     </div>
+
 </div>
 
 <script src="./js/goal.js"></script>
+
