@@ -42,7 +42,10 @@ module.exports = {
     hobbies: (salary) => {
         return Math.floor((salary * 5) / 100);
     },
-
-
+   
 };
 
+var calculateCar= getElementById("carAmountInput");
+
+const iterations = calculateCar(salary, calculateCar);
+console.log(iterations); 
