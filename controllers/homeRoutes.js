@@ -3,53 +3,31 @@ const { Expense, Income, Goal, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
-  try {
+// router.get('/', async (req, res) => {
+//   try {
     
-    const incomeData = await Income.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+//     const incomeData = await Income.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
    
-    const income = incomeData.get({ plain: true });
-    console.log(income);
+//     const income = incomeData.get({ plain: true });
+//     console.log(income);
     
-    res.render('homepage', { 
-      income, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('homepage', { 
+//       income, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
-router.get('/blog/:id', async (req, res) => {
-  try {
-    const incomeData = await Income.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const income = incomeData.get({ plain: true });
-    console.log(income);
-
-    res.render('income', {
-      ...income,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // router.get('/', async (req, res) => {
 //   try {
@@ -175,6 +153,11 @@ router.get('/goals', (req, res) => {
 router.get('/expenses', (req, res) => {
 
   res.render('expenses');
+});
+
+router.get('/', (req, res) => {
+
+  res.render('homepage');
 });
 
 module.exports = router;
