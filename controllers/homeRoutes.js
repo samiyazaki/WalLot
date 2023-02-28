@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
 
     const finances = financeData.map((finance) => finance.get({ plain: true }));
+    console.log(finances);
 
     res.render('homepage', { 
       finances, 
@@ -73,6 +74,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('signup');
 });
 
 module.exports = router;
