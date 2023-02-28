@@ -6,10 +6,14 @@
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
+            <form id="car-form">
           <h5 class="card-title">Buy a Car</h5>
-          <img src="../assets/man-815795_640.jpg" alt="Handsome man sits on car he can't afford">
+             <label for="car-amount">Enter amount</label>
+        <input class="form-input" type="text" id="car-amount" name="car-amount" />
+
           <br>
-          <a href="#" class="btn btn-primary car-btn">Learn More</a>
+          <button type="submit" class="btn btn-primary car-btn" id="car-goal">Select Goal</button>
+          </form>
         </div>
       </div>
       <div class="card-footer car">
@@ -34,10 +38,14 @@
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
+             <form id="house-form">
           <h5 class="card-title">Save for a House</h5>
-          <img src="../assets/house-1477041_640.jpg" alt="Someone saw too many episodes of shipping ocntainer homes">
+
+              <label for="house-amount">Enter amount</label>
+        <input class="form-input" type="text" id="house-amount" name="house-amount" />
           <br>
-          <a href="#" class="btn btn-primary house-btn">Learn More</a>
+          <button type="submit" class="btn btn-primary house-btn" id="house-goal">Select Goal</button>
+          </form>
         </div>
       </div>
       <div class="card-footer house">
@@ -62,10 +70,14 @@
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
+            <form id="debt-form">
           <h5 class="card-title">Pay Off Debt</h5>
-          <img src="../assets/broke-4765739_640.jpg" alt="Man proves he has no money to give">
+             <label for="debt-amount">Enter amount</label>
+        <input class="form-input" type="text" id="debt-amount" name="debt-amount" />
+
           <br>
-          <a href="#" class="btn btn-primary debt-btn">Learn More</a>
+          <button type="submit" class="btn btn-primary debt-btn" id="debt-goal">Select Goal</button>
+          </form>
         </div>
       </div>
       <div class="card-footer debt">
@@ -84,5 +96,8 @@
         <a href="#" class="btn btn-primary back-btn">Back</a>
       </div>
     </div>
-  </div>
+
 </div>
+
+<script src="./js/goal.js"></script>
+
