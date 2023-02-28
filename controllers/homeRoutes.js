@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 
 
     const finances = financeData.map((finance) => finance.get({ plain: true }));
+    console.log(finances);
 
     res.render('homepage', { 
       finances, 
