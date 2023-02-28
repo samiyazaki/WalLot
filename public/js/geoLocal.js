@@ -23,7 +23,7 @@ const errorCallback = (error) => {
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
 var getEstimateDetails = function() {
-    var apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyAbc9mGWoNSF4mX8TA1ypEtVhKOfpicZNE';
+    var apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyBSnnwQVNSmITvVgdJReDZ2xRrxJHAixLo';
     fetch(apiUrl, {
         method: 'GET',
     })
