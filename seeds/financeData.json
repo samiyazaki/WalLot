@@ -1,0 +1,14 @@
+[
+    {
+      "salary": "10000",
+      "goal_time": "5",
+      "goal": "buy a house"
+
+    },
+    {
+        "salary": "200000",
+        "goal_time": "2",
+        "goal": "buy a car"
+  
+      }
+    ]
