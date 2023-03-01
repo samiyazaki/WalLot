@@ -115,17 +115,17 @@ router.get('/signup', (req, res) => {
 
 router.get('/goals', withAuth, (req, res) => {
 
-  res.render('goals');
+  res.render('goals', {logged_in: true });
 });
 
 router.get('/expenses', withAuth, (req, res) => {
 
-  res.render('expenses');
+  res.render('expenses', {logged_in: req.session.logged_in});
 });
 
 router.get('/credit', withAuth, (req, res) => {
 
-  res.render('credit');
+  res.render('credit', {logged_in: true });
 });
 
 router.get('/', (req, res) => {
