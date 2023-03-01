@@ -56,7 +56,7 @@ module.exports = {
     },
 
     years: (income, amount) => {
-        return ((income* 10) / 10) / amount;
+        return Math.floor(((amount * 10) / 10) / income);
     }
 
 };
