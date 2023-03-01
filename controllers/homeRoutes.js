@@ -2,79 +2,6 @@ const router = require('express').Router();
 const { Expense, Income, Goal, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-// router.get('/', async (req, res) => {
-//   try {
-    
-//     const incomeData = await Income.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-   
-//     const income = incomeData.get({ plain: true });
-//     console.log(income);
-    
-//     res.render('homepage', { 
-//       income, 
-//       logged_in: req.session.logged_in 
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-// router.get('/', async (req, res) => {
-//   try {
-//     const allData = await Income.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-
-//     const data = allData.map((data) => data.get({ plain: true }));
-//     console.log(data);
-
-//     res.render('homepage', { 
-//       data, 
-//       logged_in: req.session.logged_in 
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/finance/:id', async (req, res) => {
-//   try {
-//     const userData = await Finance.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const finance = financeData.get({ plain: true });
-
-//     res.render('dashboard', {
-//       ...finance,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get('/income/:id', async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
@@ -90,6 +17,29 @@ router.get('/income/:id', async (req, res) => {
     console.log(income);
 
     res.render('income', {
+      ...income,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/income/:id', async (req, res) => {
+  try {
+    const incomeData = await Income.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const income = incomeData.get({ plain: true });
+    console.log(income);
+
+    res.render('plans', {
       ...income,
       logged_in: req.session.logged_in
     });
@@ -165,8 +115,8 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/plan', (req, res) => {
+router.get('/plans', (req, res) => {
 
-  res.render('plan');
+  res.render('plans');
 });
 module.exports = router;
