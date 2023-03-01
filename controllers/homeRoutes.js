@@ -155,6 +155,11 @@ router.get('/expenses', (req, res) => {
   res.render('expenses');
 });
 
+router.get('/credit', (req, res) => {
+
+  res.render('credit');
+});
+
 router.get('/', (req, res) => {
 
   res.render('homepage');
