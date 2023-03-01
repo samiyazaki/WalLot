@@ -1,11 +1,12 @@
+<div class="center">
 <div class="row">
-  <div class="col-auto">
+  <div>
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div>
+  <div>
     <h3>Enter Monthly Income</h3>
 
     <form class="form new-income-form">
@@ -21,21 +22,23 @@
         <button type="submit" class="btn btn-primary">Add Income</button>
       </div>
       <a href="/dashboard" class="btn btn-primary back-btn">Return to dashboard</a>
+      <a href="/expenses" class="btn btn-primary back-btn">Next</a>
 
     </form>
   </div>
 
   {{#if income}}
-  <div class="col-md-6 post-list">
+  <div class="post-list">
     <h3>Current Income:</h3>
 
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{income.amount}}</h4>
+    <div>
+      <div>
+        <h4>${{income.amount}}</h4>
       </div>
     </div>
   </div>
   {{/if}}
+</div>
 </div>
 
 <script src="./js/income.js"></script>

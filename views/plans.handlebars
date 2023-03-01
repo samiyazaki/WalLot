@@ -1,24 +1,28 @@
 <h2 class="text-center">WalLot Suggested Plan</h2>
 <div>
     <div>
+        <h1>Your Yearly Income: $<span id="income">{{income.amount}}</span> </h1>
+        <div class="calculations">
         <h3>Needs: 50%</h3>
-        <p>display 50% of income</p>
-        <p>Housing: </p>
-        <p>Utilities: </p>
-        <p>Transportation: </p>
-        <p>Grocery: </p>
-        <p>Insurance: </p>
+        <b id="need-income">$<span id="needs">{{needs income.amount}}</span></b>
+        <p>Housing: $<span id="housing">{{housing income.amount}}</span></p>
+        <p>Utilities: $<span id="utilities">{{utilities income.amount}}</span></p>
+        <p>Transportation: $<span id="transportation">{{transportation income.amount}}</span></p>
+        <p>Grocery: $<span id="grocery">{{grocery income.amount}}</span></p>
+        <p>Insurance: $<span id="insurance">{{insurance income.amount}}</span></p>
         <h3>Wants 30%</h3>
-        <p>display 30% of income</p>
-        <p>Eating Out: </p>
-        <p>Clothing: </p>
-        <p>Entertainment: </p>
-        <p>Vacations: </p>
-        <p>Hobbies: </p>
+        <b>$<span id="wants">{{wants income.amount}}</span></b>
+        <p>Eating Out: $<span id="eating_out">{{eatingOut income.amount}}</span></p>
+        <p>Clothing: $<span id="clothing">{{clothing income.amount}}</span></p>
+        <p>Entertainment: $<span id="entertainment">{{entertainment income.amount}}</span></p>
+        <p>Vacations: $<span id="vacation">{{vacation income.amount}}</span></p>
+        <p>Hobbies:  $<span id="hobbies">{{hobbies income.amount}}</span></p>
         <h3>Savings 20%</h3>
-        <p>display of 20% of income</p>
+        <b>$<span id="savings">{{savings income.amount}}</span></b>
         <h3>Your Selected Goal</h3>
-        <p>Car: $40,000</p>
-        <p>If you save 10% of your income for x years, you will reach your goal.</p>
+        <p>{{goal.goal}}: <span id="goal_amount">{{goal.goal_amount}}</span></p>
+        <p>If you save 10% or half your savings ${{goalSavings income.amount}} of your income for {{years income.amount goal.goal_amount}} years, you will reach your goal.</p>
+        </div>
     </div>
 </div>
+

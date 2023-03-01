@@ -2,80 +2,7 @@ const router = require('express').Router();
 const { Expense, Income, Goal, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-// router.get('/', async (req, res) => {
-//   try {
-    
-//     const incomeData = await Income.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-   
-//     const income = incomeData.get({ plain: true });
-//     console.log(income);
-    
-//     res.render('homepage', { 
-//       income, 
-//       logged_in: req.session.logged_in 
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-// router.get('/', async (req, res) => {
-//   try {
-//     const allData = await Income.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-
-//     const data = allData.map((data) => data.get({ plain: true }));
-//     console.log(data);
-
-//     res.render('homepage', { 
-//       data, 
-//       logged_in: req.session.logged_in 
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/finance/:id', async (req, res) => {
-//   try {
-//     const userData = await Finance.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const finance = financeData.get({ plain: true });
-
-//     res.render('dashboard', {
-//       ...finance,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get('/income/:id', async (req, res) => {
+router.get('/income/:id', withAuth, async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -91,6 +18,32 @@ router.get('/income/:id', async (req, res) => {
 
     res.render('income', {
       ...income,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/plans/:id', withAuth, async (req, res) => {
+  try {
+    const incomeData = await Income.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Goal
+        }
+      ],
+    });
+
+    const income = incomeData.get({ plain: true });
+    console.log(income);
+
+    res.render('plans', {
+      ...income,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -98,9 +51,28 @@ router.get('/income/:id', async (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/plans', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Income }, { model: Goal }],
+    });
 
-  res.render('dashboard');
+    const user = userData.get({ plain: true });
+    console.log(user);
+
+    res.render('plans', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard', withAuth, (req, res) => {
+
+  res.render('dashboard', {logged_in: true });
 });
 
 router.get('/income', withAuth, async (req, res) => {
@@ -141,32 +113,29 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/income', (req, res) => {
-  res.render('income');
+router.get('/goals', withAuth, (req, res) => {
+
+  res.render('goals', {logged_in: true });
 });
 
-router.get('/goals', (req, res) => {
+router.get('/expenses', withAuth, (req, res) => {
 
-  res.render('goals');
+  res.render('expenses', {logged_in: req.session.logged_in});
 });
 
-router.get('/expenses', (req, res) => {
+router.get('/credit', withAuth, (req, res) => {
 
-  res.render('expenses');
+  res.render('credit', {logged_in: true });
 });
 
-router.get('/credit', (req, res) => {
+router.get('/taxes', (req, res) => {
 
-  res.render('credit');
+  res.render('taxes');
 });
 
 router.get('/', (req, res) => {
-
-  res.render('homepage');
+  
+  res.render('homepage', {logged_in: req.session.logged_in});
 });
 
-router.get('/plan', (req, res) => {
-
-  res.render('plan');
-});
 module.exports = router;

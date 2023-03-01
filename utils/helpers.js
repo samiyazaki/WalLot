@@ -1,46 +1,62 @@
 module.exports = {
-    savings: (salary) => {
-      return Math.floor((salary * 20) / 100);
+    savings: (income) => {
+      return Math.floor((income * 20) / 100);
     },
 
-    housing: (salary) => {
-        return Math.floor((salary * 20) / 100);
+    housing: (income) => {
+        return Math.floor((income * 20) / 100);
     },
 
-    utilities: (salary) => {
-        return Math.floor((salary * 5) / 100);
+    utilities: (income) => {
+        return Math.floor((income * 5) / 100);
     },
 
-    transportation: (salary) => {
-        return Math.floor((salary * 10) / 100);
+    transportation: (income) => {
+        return Math.floor((income * 10) / 100);
     },
 
-    grocery: (salary) => {
-        return Math.floor((salary * 5) / 100);
+    grocery: (income) => {
+        return Math.floor((income * 5) / 100);
     }, 
 
-    insurance: (salary) => {
-        return Math.floor((salary * 5) / 100);
+    insurance: (income) => {
+        return Math.floor((income * 5) / 100);
     },
 
-    eatingOut: (salary) => {
-        return Math.floor((salary * 5) / 100);
+    eatingOut: (income) => {
+        return ((income * 5) / 100);
     }, 
 
-    clothing: (salary) => {
-        return Math.floor((salary * 3) / 100);
+    clothing: (income) => {
+        return ((income * 3) / 100);
     },
 
-    entertainment: (salary) => {
-        return Math.floor((salary * 2) / 100);
+    entertainment: (income) => {
+        return ((income * 2) / 100);
     },
 
-    vacation: (salary) => {
-        return Math.floor((salary * 10) / 100);
+    vacation: (income) => {
+        return ((income * 10) / 100);
     },
 
-    hobbies: (salary) => {
-        return Math.floor((salary * 5) / 100);
+    hobbies: (income) => {
+        return ((income * 5) / 100);
     },
-   
+
+    needs: (income) => {
+        return ((income * 50) / 100);
+    },
+
+    wants: (income) => {
+        return ((income * 30) / 100);
+    },
+
+    goalSavings: (income) => {
+        return ((income * 10) / 100);
+    },
+
+    years: (income, amount) => {
+        return Math.floor(((amount * 10) / 10) / income);
+    }
+
 };
