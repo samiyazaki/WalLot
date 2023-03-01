@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Expense, Income, Goal, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/income/:id', async (req, res) => {
+router.get('/income/:id', withAuth, async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -18,14 +18,14 @@ router.get('/income/:id', async (req, res) => {
 
     res.render('income', {
       ...income,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/plans/:id', async (req, res) => {
+router.get('/plans/:id', withAuth, async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -70,9 +70,9 @@ router.get('/plans', withAuth, async (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
 
-  res.render('dashboard');
+  res.render('dashboard', {logged_in: true });
 });
 
 router.get('/income', withAuth, async (req, res) => {
@@ -113,23 +113,19 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/income', (req, res) => {
-  res.render('income');
+router.get('/goals', withAuth, (req, res) => {
+
+  res.render('goals', {logged_in: true });
 });
 
-router.get('/goals', (req, res) => {
+router.get('/expenses', withAuth, (req, res) => {
 
-  res.render('goals');
+  res.render('expenses', {logged_in: req.session.logged_in});
 });
 
-router.get('/expenses', (req, res) => {
+router.get('/credit', withAuth, (req, res) => {
 
-  res.render('expenses');
-});
-
-router.get('/credit', (req, res) => {
-
-  res.render('credit');
+  res.render('credit', {logged_in: true });
 });
 
 router.get('/taxes', (req, res) => {
@@ -138,12 +134,8 @@ router.get('/taxes', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-
-  res.render('homepage');
+  
+  res.render('homepage', {logged_in: req.session.logged_in});
 });
 
-router.get('/plans', (req, res) => {
-
-  res.render('plans');
-});
 module.exports = router;

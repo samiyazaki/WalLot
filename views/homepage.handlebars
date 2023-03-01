@@ -1,3 +1,8 @@
-<h1>Welcome to WalLot</h1>
-
-     <a href="/login" class="login">LogIn</a><a href="/signup" class="sign_up">SignUp</a>
+<div id="homepage">
+<h1 id="title">Welcome to WalLot</h1>
+<p id="summary">A personal financial planner that helps you save time, track money, and get important insights.</p>
+<p>"The easiest, most comprehensive way to both see where your money is going and plan for future expenses."</p>
+{{#unless logged_in}}
+     <a href="/login" class="login">Log In</a><a href="/signup" class="signup">Sign Up</a>
+    </div>
+{{/unless}}
