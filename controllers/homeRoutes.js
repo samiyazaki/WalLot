@@ -165,4 +165,8 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
+router.get('/plan', (req, res) => {
+
+  res.render('plan');
+});
 module.exports = router;
