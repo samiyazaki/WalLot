@@ -45,7 +45,3 @@ module.exports = {
    
 };
 
-var calculateCar= getElementById("carAmountInput");
-
-const iterations = calculateCar(salary, calculateCar);
-console.log(iterations); 
