@@ -180,6 +180,7 @@ h1, h4 {
     text-decoration: none;
     padding: 30px;
     color: white;
+    font-size: 20px;
   }
 
   nav a:hover{
@@ -237,4 +238,33 @@ form .form-input {
 
 form .form-input.form-input-squared {
   border-radius: 0;
+}
+
+#logout{
+    color: white;
+}
+
+.next{
+    margin: 10px;
+}
+
+#income{
+    margin-top: 25px;
+}
+
+#goals{
+margin-top: 75px;
+}
+
+#credit{
+    margin-top: 25px;
+}
+
+.gCard{
+    margin-top: 100px;
+}
+
+.calculations{
+    margin-left: 20px;
+    
 }
