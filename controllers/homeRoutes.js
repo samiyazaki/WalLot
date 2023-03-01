@@ -132,6 +132,11 @@ router.get('/credit', (req, res) => {
   res.render('credit');
 });
 
+router.get('/taxes', (req, res) => {
+
+  res.render('taxes');
+});
+
 router.get('/', (req, res) => {
 
   res.render('homepage');
