@@ -18,7 +18,7 @@ router.get('/income/:id', withAuth, async (req, res) => {
 
     res.render('income', {
       ...income,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -72,7 +72,7 @@ router.get('/plans', withAuth, async (req, res) => {
 
 router.get('/dashboard', withAuth, (req, res) => {
 
-  res.render('dashboard');
+  res.render('dashboard', {logged_in: true });
 });
 
 router.get('/income', withAuth, async (req, res) => {
@@ -129,8 +129,8 @@ router.get('/credit', withAuth, (req, res) => {
 });
 
 router.get('/', (req, res) => {
-
-  res.render('homepage');
+  
+  res.render('homepage', {logged_in: req.session.logged_in});
 });
 
 module.exports = router;
