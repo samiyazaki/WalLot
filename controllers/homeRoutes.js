@@ -25,7 +25,7 @@ router.get('/income/:id', async (req, res) => {
   }
 });
 
-router.get('/income/:id', async (req, res) => {
+router.get('/plans/:id', async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -33,6 +33,9 @@ router.get('/income/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Goal
+        }
       ],
     });
 
@@ -42,6 +45,25 @@ router.get('/income/:id', async (req, res) => {
     res.render('plans', {
       ...income,
       logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/plans', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Income }, { model: Goal }],
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+
+    res.render('plans', {
+      ...user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
