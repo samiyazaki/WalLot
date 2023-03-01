@@ -25,14 +25,27 @@ h1, h4 {
 }
 
 .btn {
-    border-radius: 5px;
-    border: none;
-    transition: all 0.3s ease-out;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
 }
 
 .btn-primary {
-    background-color: #049b18;
-}
+    background-color: #16a085;
+    border-color: #16a085;
+  }
 
 .btn-secondary {
     background-color: #6c757d;
@@ -54,6 +67,10 @@ h1, h4 {
     transform: translateY(-5px);
 }
 
+.btn-primary:hover {
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+  }
 @keyframes slide-up {
     from {
         transform: translateY(50px);
@@ -96,4 +113,16 @@ h1, h4 {
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
   
+  .card-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
