@@ -126,3 +126,60 @@ h1, h4 {
     line-height: 1.5;
     color: #555;
   }
+
+  img{
+    height: 70px;
+    width: 100px;
+  }
+
+  #title{
+    color: #04829b;
+  }
+
+  #summary{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+  }
+
+  #homepage {
+    text-align: center;
+    margin-top: 170px;
+  }
+
+  .login {
+    padding: 50px;
+    font-weight: bold;
+    color:#04829b;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .login:hover {
+    color:#012c35 ;
+  }
+
+  .signup {
+    padding: 50px;
+    font-weight: bold;
+    color: #04829b;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .signup:hover {
+    color:#012c35 ;
+  }
+
+  nav a {
+    text-decoration: none;
+    padding: 30px;
+    color: white;
+  }
+
+  nav a:hover{
+    color: #04829b;
+    font-weight: bold;
+  }
+

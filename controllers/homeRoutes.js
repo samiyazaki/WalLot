@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Expense, Income, Goal, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/income/:id', async (req, res) => {
+router.get('/income/:id', withAuth, async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -25,7 +25,7 @@ router.get('/income/:id', async (req, res) => {
   }
 });
 
-router.get('/plans/:id', async (req, res) => {
+router.get('/plans/:id', withAuth, async (req, res) => {
   try {
     const incomeData = await Income.findByPk(req.params.id, {
       include: [
@@ -70,7 +70,7 @@ router.get('/plans', withAuth, async (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
 
   res.render('dashboard');
 });
@@ -113,21 +113,17 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/income', (req, res) => {
-  res.render('income');
-});
-
-router.get('/goals', (req, res) => {
+router.get('/goals', withAuth, (req, res) => {
 
   res.render('goals');
 });
 
-router.get('/expenses', (req, res) => {
+router.get('/expenses', withAuth, (req, res) => {
 
   res.render('expenses');
 });
 
-router.get('/credit', (req, res) => {
+router.get('/credit', withAuth, (req, res) => {
 
   res.render('credit');
 });
@@ -137,8 +133,4 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/plans', (req, res) => {
-
-  res.render('plans');
-});
 module.exports = router;
