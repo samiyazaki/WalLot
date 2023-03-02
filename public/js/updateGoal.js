@@ -17,7 +17,7 @@ const carUpdateHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/plans');
       } else {
-        alert('Failed to add goal');
+        alert('Please enter numerical values only');
       }
     }
   };
@@ -40,7 +40,7 @@ const carUpdateHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/plans');
       } else {
-        alert('Failed to add goal');
+        alert('Please enter numerical values only');
       }
     }
   };
@@ -63,7 +63,7 @@ const carUpdateHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/plans');
       } else {
-        alert('Failed to add goal');
+        alert('Please enter numerical values only');
       }
     }
   };
