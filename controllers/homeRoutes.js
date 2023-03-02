@@ -94,6 +94,25 @@ router.get('/income', withAuth, async (req, res) => {
   }
 });
 
+router.get('/goals', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Goal }],
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+
+    res.render('goals', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/dashboard');
@@ -126,11 +145,6 @@ router.get('/expenses', withAuth, (req, res) => {
 router.get('/credit', withAuth, (req, res) => {
 
   res.render('credit', {logged_in: true });
-});
-
-router.get('/taxes', (req, res) => {
-
-  res.render('taxes');
 });
 
 router.get('/', (req, res) => {
