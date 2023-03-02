@@ -136,6 +136,12 @@ router.get('/taxes', (req, res) => {
 router.get('/', (req, res) => {
   
   res.render('homepage', {logged_in: req.session.logged_in});
+
+});
+
+router.get('/taxes', withAuth, (req, res) => {
+
+  res.render('taxes', {logged_in: true });
 });
 
 module.exports = router;
