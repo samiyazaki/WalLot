@@ -26,7 +26,7 @@
 // navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
 // var getEstimateDetails = function() {
-//     var apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyB4_7fjEDvsekRq80BXDK22oITSYxZJtz4';
+//     var apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyAY9SF6i60BvFzXFGmHoN6iT-U42gdtmUQ';
 //     fetch(apiUrl, {
 //         method: 'GET',
 //     })
@@ -51,7 +51,7 @@
 //     fetch(apiUrl, {
 //         method: 'GET',
 //         headers: {
-//             'X-RapidAPI-Key': 'eb20056e8dmshc15d6f3b5147c76p155411jsn203e72dd3ef7',
+//             'X-RapidAPI-Key': '5075fa32f5msh2d37ef7bc1f9242p1fc222jsn8d4befb79511',
 //             'X-RapidAPI-Host': 'cost-of-living-and-prices.p.rapidapi.com'
 //         }
 //     })
@@ -66,7 +66,7 @@
 //                 var grocery = (data.prices[8].avg + data.prices[10].avg + data.prices[11].avg + data.prices[13].avg + data.prices[14].avg + data.prices[15].avg + data.prices[16].avg + data.prices[17].avg) * 3;
 
 // var estimateContainer = document.createElement('div');
-// estimateContainer.classList = 'card';
+// estimateContainer.classList = 'card api_card';
 
 // var listEl = document.createElement('ul');
 // listEl.classList = 'list-group list-group-flush';
