@@ -27,7 +27,7 @@ const errorCallback = (error) => {
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
 var getEstimateDetails = function() {
-    var apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + long + '&key=AIzaSyDn2LDmQB6_zIqOAAPAE9Dq0nW84xXxKTM`;
+    var apiUrl = 'http://api.openweathermap.org/geo/1.0/reverse?lat=' + lat + '&lon=' + long + '&appid=c5a5ec0037fb9829d9254f1a67b4d869';
     fetch(apiUrl, {
         method: 'GET',
     })
@@ -36,11 +36,11 @@ var getEstimateDetails = function() {
             console.log(response);
             response.json().then(function (data){
                 console.log(data);
-                city = data.results[8].address_components[0].long_name;
-                country = data.results[11].address_components[0].long_name;
+                city = data[0].local_names.af;
+                country = 'United States';
                 cDisplay.textContent = ' ' + city;
                 getpricesDetails(city,country);
-                setTimeout(loaderHandler, 1000);
+                setTimeout(loaderHandler, 500);
 
             });
         }
@@ -64,11 +64,11 @@ var getEstimateDetails = function() {
         if (response.ok) {
             console.log(response);
             response.json().then(function (data){
-                var hBuy = data.prices[0].avg;
-                var hRent = data.prices[27].avg;
-                var eatingOut = data.prices[34].max;
+                var hBuy = (data.prices[0].avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var hRent = (data.prices[27].avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var eatingOut = (data.prices[34].max).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var iRates = data.prices[52].max;
-                var grocery = (data.prices[8].avg + data.prices[10].avg + data.prices[11].avg + data.prices[13].avg + data.prices[14].avg + data.prices[15].avg + data.prices[16].avg + data.prices[17].avg) * 3;
+                var grocery = ((data.prices[8].avg + data.prices[10].avg + data.prices[11].avg + data.prices[13].avg + data.prices[14].avg + data.prices[15].avg + data.prices[16].avg + data.prices[17].avg) * 3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 var estimateContainer = document.createElement('div');
 estimateContainer.classList = 'card api_card';
@@ -80,7 +80,7 @@ estimateContainer.appendChild(listEl);
 
 var hBuy_El = document.createElement('li');
 hBuy_El.classList = 'list-group-item';
-hBuy_El.textContent = 'Buy in City Centre - ' + '$' + hBuy + '(PSM)';
+hBuy_El.textContent = 'Buy in City Centre - ' + '$' + hBuy + '/PSM';
 
 listEl.appendChild(hBuy_El);
 
