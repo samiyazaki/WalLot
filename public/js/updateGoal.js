@@ -1,5 +1,5 @@
 
-const carHandler = async (event) => {
+const carUpdateHandler = async (event) => {
     event.preventDefault();
   
     const goal = 'Buy a Car'
@@ -7,7 +7,7 @@ const carHandler = async (event) => {
   
     if (goal && goal_amount) {
       const response = await fetch(`/api/goal`, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ goal, goal_amount }),
         headers: {
           'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const carHandler = async (event) => {
     }
   };
 
-  const houseHandler = async (event) => {
+  const houseUpdateHandler = async (event) => {
     event.preventDefault();
   
     const goal = 'Save for a House'
@@ -30,7 +30,7 @@ const carHandler = async (event) => {
   
     if (goal && goal_amount) {
       const response = await fetch(`/api/goal`, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ goal, goal_amount }),
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const carHandler = async (event) => {
     }
   };
 
-  const debtHandler = async (event) => {
+  const debtUpdateHandler = async (event) => {
     event.preventDefault();
   
     const goal = 'Pay Off Debt'
@@ -53,7 +53,7 @@ const carHandler = async (event) => {
   
     if (goal && goal_amount) {
       const response = await fetch(`/api/goal`, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ goal, goal_amount }),
         headers: {
           'Content-Type': 'application/json',
@@ -70,13 +70,13 @@ const carHandler = async (event) => {
 
 
 document
-.querySelector('#car-form')
-.addEventListener('submit', carHandler);
+.querySelector('#car-update')
+.addEventListener('submit', carUpdateHandler);
 
 document
-.querySelector('#house-form')
-.addEventListener('submit', houseHandler);
+.querySelector('#house-update')
+.addEventListener('submit', houseUpdateHandler);
 
 document
-.querySelector('#debt-form')
-.addEventListener('submit', debtHandler);
+.querySelector('#debt-update')
+.addEventListener('submit', debtUpdateHandler);

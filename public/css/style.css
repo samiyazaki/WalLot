@@ -110,6 +110,7 @@ h1, h4 {
     justify-content: center;
     background-color: #f5f5f5;
   }
+  
   .navbar {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     background: linear-gradient(to bottom, #038a81 0%, #006d83 100%);
@@ -278,14 +279,19 @@ margin-top: 75px;
 }
 
 .calculations{
-    margin-left: 20px;
-    
+    margin: 20px;
+    align-items: center;
 }
 
-#expenses{
-margin-left: 370px;
+.api_card{
+width: 100%;
+height: 80%;
+
 }
 
+.api_card li{
+    text-align: center;
+}
 #homepage {
     background-color: rgba(255,255,255,.8);
     padding: 50px;
@@ -296,3 +302,44 @@ margin-left: 370px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+ul li {
+    text-align: left;
+  }
+  
+.plan-card{
+    display: inline-table;
+    margin: 20px;
+    text-align: center;
+    width: 420px;
+    height: 280px;
+}
+
+.login_card {
+    height: 700px;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #006d83;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

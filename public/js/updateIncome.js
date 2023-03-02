@@ -1,12 +1,12 @@
-const newFormHandler = async (event) => {
+const updateFormHandler = async (event) => {
     event.preventDefault();
   
-   
-    const amount = document.querySelector('#income-amount').value.trim();
+
+    const amount = document.querySelector('#update-amount').value.trim();
   
     if (amount) {
       const response = await fetch(`/api/income`, {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({ amount }),
         headers: {
           'Content-Type': 'application/json',
@@ -20,10 +20,9 @@ const newFormHandler = async (event) => {
       }
     }
   };
-
-
-
-
-document
-.querySelector('.new-income-form')
-.addEventListener('submit', newFormHandler);
+  
+  
+  
+  document
+  .querySelector('.update-income-form')
+  .addEventListener('submit', updateFormHandler);

@@ -1,12 +1,13 @@
+{{#if goal}}
 <br>
-<h4 class="text-center">Please select the goal that you would like to work towards!</h4>
+<h4 class="text-center">Please select a new goal that you would like to work towards!</h4>
 <div class="row  col-10 mx-auto my-5 p-5 card-list-container justify-content-center" role="option-card" aria-label="Example 1px high">
   <!-- Car Goal -->
   <div class="text-center col-sm-6 mb-3 col-lg-4 mb-sm-0 my-4 option-card">
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-            <form id="car-form">
+            <form id="car-update">
           <h5 class="card-title">Buy a Car</h5>
              <label for="car-amount">Enter amount</label>
         <input class="form-input" type="text" id="car-amount" name="car-amount" />
@@ -41,7 +42,7 @@
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-             <form id="house-form">
+             <form id="house-update">
           <h5 class="card-title">Save for a House</h5>
 
               <label for="house-amount">Enter amount</label>
@@ -74,7 +75,7 @@
     <div class="card-wrapper">
       <div class="card">
         <div class="card-body">
-            <form id="debt-form">
+            <form id="debt-update">
           <h5 class="card-title">Pay Off Debt</h5>
              <label for="debt-amount">Enter amount</label>
         <input class="form-input" type="text" id="debt-amount" name="debt-amount" />
@@ -106,12 +107,104 @@
 <a href="/dashboard" class="btn btn-primary back-btn">Return to Dashboard</a>
   <a href="/plans" class="btn btn-primary back-btn next">Next</a>
 
+  <script src="./js/updateGoal.js"></script>
+
+  {{else}}
 
 
+<br>
+<h4 class="text-center">Please select the goal that you would like to work towards!</h4>
+<div class="row  col-10 mx-auto my-5 p-5 card-list-container justify-content-center" role="option-card" aria-label="Example 1px high">
+  <!-- Car Goal -->
+  <div class="text-center col-sm-6 mb-3 col-lg-4 mb-sm-0 my-4 option-card">
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="card-body">
+            <form id="car-form">
+          <h5 class="card-title">Buy a Car</h5>
+             <label for="car-amount">Enter amount</label>
+        <input class="form-input" type="text" id="car-amount" name="car-amount" />
 
+          <br>
+          <button type="submit" class="btn btn-primary car-btn" id="car-goal">Select Goal</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-wrapper">
+      <div class="card-footer text-center my-4 car">
+           <div class="card">
+        <p class="gCard">Saving up to buy a car can be a big financial goal. Here are some tips to help you reach it:</p>
+           </div>
+        <ul class="car">
+          <li>Set a specific savings goal and timeline</li>
+          <li>Create a budget and track your spending</li>
+          <li>Consider buying a used car instead of new</li>
+          <li>Shop around for the best car loan rates</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- House Goal -->
+  <div class="text-center col-sm-6 mb-3 col-lg-4 mb-sm-0 my-4 option-card">
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="card-body">
+             <form id="house-form">
+          <h5 class="card-title">Save for a House</h5>
 
+              <label for="house-amount">Enter amount</label>
+        <input class="form-input" type="text" id="house-amount" name="house-amount" />
+          <br>
+          <button type="submit" class="btn btn-primary house-btn" id="house-goal">Select Goal</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-footer text-center my-4 house">
+           <div class="card">
+        <p class="gCard">Buying a house is a big financial commitment. Here are some tips to help you save up for a down payment:</p>
+           </div>
+        <ul class="house">
+          <li>Set a savings goal and timeline</li>
+          <li>Cut back on unnecessary expenses</li>
+          <li>Explore down payment assistance programs</li>
+          <li>Consider a side job or freelance work to boost your income</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Debt Goal -->
+  <div class="text-center col-sm-6 mb-3 col-lg-4 mb-sm-0 my-4 option-card">
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="card-body">
+            <form id="debt-form">
+          <h5 class="card-title">Pay Off Debt</h5>
+             <label for="debt-amount">Enter amount</label>
+        <input class="form-input" type="text" id="debt-amount" name="debt-amount" />
 
+          <br>
+          <button type="submit" class="btn btn-primary debt-btn" id="debt-goal">Select Goal</button>
+          </form>
+        </div>
+      </div>
+      <div class="card-footer text-center my-4 debt">
+        <div class="card">
+        <p class="gCard">Getting out of debt is an important financial goal. Here are some tips to help you become debt-free:</p>
+        </div>
+        <ul class="debt">
+          <li>Create a budget and track your spending</li>
+          <li>Focus on paying off high-interest debt first</li>
+          <li>Consider a balance transfer credit card to consolidate debt</li>
+          <li>Explore debt counseling or debt consolidation programs</li>
+        </ul>
+      </div>
+    </div>
+</div>
 
+<a href="/dashboard" class="btn btn-primary back-btn">Return to Dashboard</a>
+  <a href="/plans" class="btn btn-primary back-btn next">Next</a>
 
 <script src="./js/goal.js"></script>
 
+{{/if}}

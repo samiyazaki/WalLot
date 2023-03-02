@@ -1,13 +1,48 @@
 <div class="center">
+  <div class="row col-10 mx-auto my-5 p-5 card-list-container login_card" role="option-card" aria-label="Example 1px high">
+{{#if income}}
+<div class="row">
+  <div>
+    <h2>Welcome back, {{name}}!</h2>
+  </div>
+</div>
+<div>
+  <div>
+     <h3>Update Yearly Income</h3>
+ 
+
+    <form class="form update-income-form">
+      <div class="form-group">
+        <label for="income-name">Name your source of income</label>
+        <input class="form-input" type="text" id="income-name" name="income-name" />
+      </div>
+      <div class="form-group">
+        <label for="update-amount">Enter your yearly income</label>
+        <input class="form-input" id="update-amount" name="update-amount"></input>
+      </div>
+      <div class="form-group">
+       
+        <button type="submit" class="btn btn-primary">Update Income</button>
+ 
+      </div>
+        <a href="/dashboard" class="btn btn-primary back-btn">Return to dashboard</a>
+      <a href="/expenses" class="btn btn-primary back-btn">Next</a>
+      </form>
+  
+  </div>
+
+  <script src="./js/updateIncome.js"></script>
+
+  {{else}}
 <div class="row">
   <div>
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-
 <div>
   <div>
-    <h3>Enter Monthly Income</h3>
+     <h3>Enter Yearly Income</h3>
+ 
 
     <form class="form new-income-form">
       <div class="form-group">
@@ -19,13 +54,21 @@
         <input class="form-input" id="income-amount" name="income-amount"></input>
       </div>
       <div class="form-group">
+       
         <button type="submit" class="btn btn-primary">Add Income</button>
+ 
       </div>
+        </form>
+
+
+  
       <a href="/dashboard" class="btn btn-primary back-btn">Return to dashboard</a>
       <a href="/expenses" class="btn btn-primary back-btn">Next</a>
+  </form>
 
-    </form>
   </div>
+  <script src="./js/income.js"></script>
+   {{/if}}
 
   {{#if income}}
   <div class="post-list">
@@ -33,12 +76,10 @@
 
     <div>
       <div>
-        <h4>${{income.amount}}</h4>
+        <h4>${{convert income.amount}}</h4>
       </div>
     </div>
   </div>
   {{/if}}
 </div>
 </div>
-
-<script src="./js/income.js"></script>

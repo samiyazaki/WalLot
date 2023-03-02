@@ -15,4 +15,21 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/', withAuth, async (req, res) => {
+    try {
+      const goalData = await Goal.update(req.body, {
+        where: {
+        user_id: req.session.user_id,
+        },
+      });
+      if (!goalData) {
+        res.status(404).json({ message: 'No goal with this id!' });
+        return;
+      }
+      res.status(200).json(goalData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 module.exports = router;
