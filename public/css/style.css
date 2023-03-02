@@ -8,6 +8,13 @@ main {
 
 body {
     background-color: #f5f5f5;
+    background-image: url("../assets/Money juggler.jpg");
+    background-color: rgba(255,255,255,.7);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: lighten;
 }
 
 
@@ -47,8 +54,8 @@ h1, h4 {
 }
 
 .btn-primary {
-    background-color:#038a81;
-    border-color: #006d83;
+    background-color:#006d83;
+    border-color: #038a81;
   }
 
 .btn-secondary {
@@ -105,7 +112,7 @@ h1, h4 {
   }
   .navbar {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to bottom, #049b18 0%, #09dd14 100%);
+    background: linear-gradient(to bottom, #038a81 0%, #006d83 100%);
   }
 
   .navbar-brand {
@@ -279,3 +286,13 @@ margin-top: 75px;
 margin-left: 370px;
 }
 
+#homepage {
+    background-color: rgba(255,255,255,.8);
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
