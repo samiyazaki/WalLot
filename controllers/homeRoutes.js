@@ -128,11 +128,6 @@ router.get('/credit', withAuth, (req, res) => {
   res.render('credit', {logged_in: true });
 });
 
-router.get('/taxes', (req, res) => {
-
-  res.render('taxes');
-});
-
 router.get('/', (req, res) => {
   
   res.render('homepage', {logged_in: req.session.logged_in});
