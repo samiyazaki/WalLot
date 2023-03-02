@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/income');
       } else {
-        alert('Please enter numbers only');
+        alert('Please enter numerical values only');
       }
     }
   };
