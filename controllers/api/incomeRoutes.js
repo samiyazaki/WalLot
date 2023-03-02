@@ -45,7 +45,7 @@ router.put('/', withAuth, async (req, res) => {
         },
       });
       if (!incomeData) {
-        res.status(404).json({ message: 'No category with this id!' });
+        res.status(404).json({ message: 'No income with this id!' });
         return;
       }
       res.status(200).json(incomeData);
