@@ -279,8 +279,8 @@ margin-top: 75px;
 }
 
 .calculations{
-    margin-left: 20px;
-    
+    margin: 20px;
+    align-items: center;
 }
 
 #expenses{
@@ -302,3 +302,10 @@ ul li {
     text-align: left;
   }
   
+.plan-card{
+    display: inline-table;
+    margin: 20px;
+    text-align: center;
+    width: 420px;
+    height: 280px;
+}

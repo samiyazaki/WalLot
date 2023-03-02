@@ -128,7 +128,7 @@
   
       if (response.ok) {
   
-        document.location.replace('/dashboard');
+        document.location.replace('/goals');
       } else {
         alert(response.statusText);
       }
