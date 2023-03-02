@@ -110,6 +110,7 @@ h1, h4 {
     justify-content: center;
     background-color: #f5f5f5;
   }
+  
   .navbar {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     background: linear-gradient(to bottom, #038a81 0%, #006d83 100%);
@@ -296,3 +297,8 @@ margin-left: 370px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+ul li {
+    text-align: left;
+  }
+  
