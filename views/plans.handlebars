@@ -26,10 +26,11 @@
           <h3>Savings 20%</h3>
           <b>$<span id="savings">{{savings income.amount}}</span></b>
           <h3>Your Selected Goal</h3>
-          <p>{{goal.goal}}: <span id="goal_amount">{{goal.goal_amount}}</span></p>
+          <p>{{goal.goal}}: <span id="goal_amount">{{convert goal.goal_amount}}</span></p>
           <p>If you save 10% or half your savings ${{goalSavings income.amount}} of your income for {{years
             income.amount
             goal.goal_amount}} years, you will reach your goal.</p>
+
         </div>
       </div>
       <div class="col-9 mx-auto my-auto">
@@ -38,7 +39,7 @@
     </div>
   </div>
 </div>
-<div class="nav-b">
+<div class="nav-b text-center mt-4">
   <a href="/dashboard" class="btn btn-primary back-btn">Return to Dashboard</a>
   <a href="/credit" class="btn btn-primary back-btn next">Next</a>
 </div>

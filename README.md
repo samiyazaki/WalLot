@@ -6,6 +6,18 @@
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=samiyazaki" alt="samiyazaki" /></a> </p>
 
 - 🔭 We're currently working on [WalLot](https://github.com/samiyazaki/WalLot)
+## WalLot is a web-based platform designed to help users manage and organize their expenses. With WalLot, users can create budgets, track their spending, and set financial goals to help them achieve their financial objectives.
+
+## This platform is built with Python, Django, and JavaScript, and is open source, allowing developers to modify and customize the code to meet their specific needs.
+
+# Features
+## Some of the key features of WalLot include:
+
+## Budget Creation: Users can create budgets and allocate funds to different categories, allowing them to track their spending and make informed financial decisions.
+## Expense Tracking: Users can track their expenses and see how much they are spending in different categories.
+## Financial Goals: Users can set financial goals, such as saving for a vacation or paying off debt, and track their progress towards these goals.
+## Data Visualization: WalLot offers data visualization tools, including graphs and charts, to help users better understand their financial data.
+## Multi-User Support: WalLot supports multiple users, allowing families or roommates to manage their finances together.
 
 - 🌱 We're currently learning **Handlebars, sql, MVC, ORM**
 
