@@ -27,7 +27,7 @@ const errorCallback = (error) => {
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
 var getEstimateDetails = function() {
-    var apiUrl = 'http://api.openweathermap.org/geo/1.0/reverse?lat=' + lat + '&lon=' + long + '&appid=c5a5ec0037fb9829d9254f1a67b4d869';
+    var apiUrl = 'https://api.openweathermap.org/geo/1.0/reverse?lat=' + lat + '&lon=' + long + '&appid=c5a5ec0037fb9829d9254f1a67b4d869';
     fetch(apiUrl, {
         method: 'GET',
     })
