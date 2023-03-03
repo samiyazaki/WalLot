@@ -37,7 +37,8 @@ var getEstimateDetails = function() {
             response.json().then(function (data){
                 console.log(data);
                 city = data[0].local_names.af;
-                country = 'United States';
+                var regionName = new Intl.DisplayNames(['en'], {type: 'region'});
+                country = regionName.of(data[0].country);
                 cDisplay.textContent = ' ' + city;
                 getpricesDetails(city,country);
                 setTimeout(loaderHandler, 500);
