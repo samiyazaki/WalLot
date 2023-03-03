@@ -36,7 +36,7 @@ var getEstimateDetails = function() {
             console.log(response);
             response.json().then(function (data){
                 console.log(data);
-                city = data[0].local_names.af;
+                city = data[0].name; //Switched from 
                 var regionName = new Intl.DisplayNames(['en'], {type: 'region'});
                 country = regionName.of(data[0].country);
                 cDisplay.textContent = ' ' + city;
@@ -64,12 +64,13 @@ var getEstimateDetails = function() {
     .then(function(response) {
         if (response.ok) {
             console.log(response);
-            response.json().then(function (data){
-                var hBuy = (data.prices[0].avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var hRent = (data.prices[27].avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var eatingOut = (data.prices[34].max).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var iRates = data.prices[52].max;
-                var grocery = ((data.prices[8].avg + data.prices[10].avg + data.prices[11].avg + data.prices[13].avg + data.prices[14].avg + data.prices[15].avg + data.prices[16].avg + data.prices[17].avg) * 3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            response.json().then(function (data){ 
+              console.log(data); // if data.error is true, then there is an error
+                var hBuy = (data.prices[0]?.avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var hRent = (data.prices[27]?.avg).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var eatingOut = (data.prices[34]?.max).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var iRates = data.prices[52]?.max;
+                var grocery = ((data.prices[8]?.avg + data.prices[10]?.avg + data.prices[11]?.avg + data.prices[13]?.avg + data.prices[14]?.avg + data.prices[15]?.avg + data.prices[16]?.avg + data.prices[17]?.avg) * 3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 var estimateContainer = document.createElement('div');
 estimateContainer.classList = 'card api_card';
