@@ -1,38 +1,44 @@
-
 <h2 class="text-center">WalLot Suggested Plan</h2>
 <div>
-    <div>
-        <h1>Your Yearly Income: $<span id="income">{{convert income.amount}}</span> </h1>
-        <div class="calculations">
+  <div>
+    <h1>Your Yearly Income: $<span id="income">{{convert income.amount}}</span> </h1>
+    <div class="row">
+      <div class="col-3 calculations mx-auto">
         <div class="card plan-card needs">
-        <h3>Needs: 50%</h3>
-        <b id="need-income">$<span id="needs">{{needs income.amount}}</span></b>
-        <p>Housing: $<span id="housing">{{housing income.amount}}</span></p>
-        <p>Utilities: $<span id="utilities">{{utilities income.amount}}</span></p>
-        <p>Transportation: $<span id="transportation">{{transportation income.amount}}</span></p>
-        <p>Grocery: $<span id="grocery">{{grocery income.amount}}</span></p>
-        <p>Insurance: $<span id="insurance">{{insurance income.amount}}</span></p>
+          <h3>Needs: 50%</h3>
+          <b id="need-income">$<span id="needs">{{needs income.amount}}</span></b>
+          <p>Housing: $<span id="housing">{{housing income.amount}}</span></p>
+          <p>Utilities: $<span id="utilities">{{utilities income.amount}}</span></p>
+          <p>Transportation: $<span id="transportation">{{transportation income.amount}}</span></p>
+          <p>Grocery: $<span id="grocery">{{grocery income.amount}}</span></p>
+          <p>Insurance: $<span id="insurance">{{insurance income.amount}}</span></p>
         </div>
         <div class="card plan-card wants">
-        <h3>Wants 30%</h3>
-        <b>$<span id="wants">{{wants income.amount}}</span></b>
-        <p>Eating Out: $<span id="eating_out">{{eatingOut income.amount}}</span></p>
-        <p>Clothing: $<span id="clothing">{{clothing income.amount}}</span></p>
-        <p>Entertainment: $<span id="entertainment">{{entertainment income.amount}}</span></p>
-        <p>Vacations: $<span id="vacation">{{vacation income.amount}}</span></p>
-        <p>Hobbies:  $<span id="hobbies">{{hobbies income.amount}}</span></p>
+          <h3>Wants 30%</h3>
+          <b>$<span id="wants">{{wants income.amount}}</span></b>
+          <p>Eating Out: $<span id="eating_out">{{eatingOut income.amount}}</span></p>
+          <p>Clothing: $<span id="clothing">{{clothing income.amount}}</span></p>
+          <p>Entertainment: $<span id="entertainment">{{entertainment income.amount}}</span></p>
+          <p>Vacations: $<span id="vacation">{{vacation income.amount}}</span></p>
+          <p>Hobbies: $<span id="hobbies">{{hobbies income.amount}}</span></p>
         </div>
         <div class="card plan-card savings">
-        <h3>Savings 20%</h3>
-        <b>$<span id="savings">{{savings income.amount}}</span></b>
-        <h3>Your Selected Goal</h3>
-        <p>{{goal.goal}}: <span id="goal_amount">{{goal.goal_amount}}</span></p>
-        <p>If you save 10% or half your savings ${{goalSavings income.amount}} of your income for {{years income.amount goal.goal_amount}} years, you will reach your goal.</p>
+          <h3>Savings 20%</h3>
+          <b>$<span id="savings">{{savings income.amount}}</span></b>
+          <h3>Your Selected Goal</h3>
+          <p>{{goal.goal}}: <span id="goal_amount">{{goal.goal_amount}}</span></p>
+          <p>If you save 10% or half your savings ${{goalSavings income.amount}} of your income for {{years
+            income.amount
+            goal.goal_amount}} years, you will reach your goal.</p>
         </div>
-        </div>
+      </div>
+      <div class="col-9 mx-auto my-auto">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
+  </div>
 </div>
 <div class="nav-b">
-<a href="/dashboard" class="btn btn-primary back-btn">Return to Dashboard</a>
+  <a href="/dashboard" class="btn btn-primary back-btn">Return to Dashboard</a>
   <a href="/credit" class="btn btn-primary back-btn next">Next</a>
 </div>
