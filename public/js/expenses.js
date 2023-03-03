@@ -53,7 +53,7 @@ var getEstimateDetails = function() {
   };
 
   var getpricesDetails = function() {
-    var apiUrl = 'shttps://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=' + city + '&country_name=' + country;
+    var apiUrl = 'https://cost-of-living-and-prices.p.rapidapi.com/prices?city_name=' + city + '&country_name=' + country;
     fetch(apiUrl, {
         method: 'GET',
         headers: {
