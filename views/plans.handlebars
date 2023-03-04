@@ -4,8 +4,8 @@
   <div>
     <h1>Your Yearly Income: $<span id="income">{{convert income.amount}}</span> </h1>
     <div class="row">
-      <div class="col-3 calculations mx-auto">
-        <div class="card plan-card needs">
+      <div class="col-12 calculations mx-auto">
+        <div class="card col-3 plan-card needs">
           <h3>Needs: 50%</h3>
           <b id="need-income">$<span id="needs">{{needs income.amount}}</span></b>
           <p>Housing: $<span id="housing">{{housing income.amount}}</span></p>
@@ -14,7 +14,7 @@
           <p>Grocery: $<span id="grocery">{{grocery income.amount}}</span></p>
           <p>Insurance: $<span id="insurance">{{insurance income.amount}}</span></p>
         </div>
-        <div class="card plan-card wants">
+        <div class="card col-3 plan-card wants">
           <h3>Wants 30%</h3>
           <b>$<span id="wants">{{wants income.amount}}</span></b>
           <p>Eating Out: $<span id="eating_out">{{eatingOut income.amount}}</span></p>
@@ -23,7 +23,7 @@
           <p>Vacations: $<span id="vacation">{{vacation income.amount}}</span></p>
           <p>Hobbies: $<span id="hobbies">{{hobbies income.amount}}</span></p>
         </div>
-        <div class="card plan-card savings">
+        <div class="card col-3 plan-card savings">
           <h3>Savings 20%</h3>
           <b>$<span id="savings">{{savings income.amount}}</span></b>
           <h3>Your Selected Goal</h3>
